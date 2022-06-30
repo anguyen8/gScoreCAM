@@ -1,7 +1,19 @@
 # gScoreCAM: What is CLIP looking at?
 
+_**tldr:** Based on the observations that [CLIP ResNet-50](https://github.com/openai/CLIP) channels are very noisy compared to typical ImageNet-trained ResNet-50, and most saliency methods obtain pretty low object localization scores with CLIP. By visualizing the top 10% most sensitive (highest-gradient) channels, our gScoreCAM obtains the state of the art weakly supervised localization results using CLIP (in both ResNet and ViT versions)._
 
-### Interactive demo ([Colab](https://colab.research.google.com/drive/13BRR5eiOE0zIrdc9Fy6uFciJ6l13PVg8?usp=sharing))
+
+**Official Implementation** for the paper [gScoreCAM: What is CLIP looking at?]() (2022) by Peijie Chen, Qi Li, Saad Biaz, Trung Bui, and Anh Nguyen.
+If you use this software, please consider citing:
+
+    @article{chen2022gScoreCAM,
+      title={gScoreCAM: What is CLIP looking at?},
+      author={Peijie Chen, Qi Li, Saad Biaz, Trung Bui, and Anh Nguyen},
+      publisher={arXiv},
+      year={2022}
+    }
+
+:star2: Interactive [Colab demo](https://colab.research.google.com/drive/13BRR5eiOE0zIrdc9Fy6uFciJ6l13PVg8?usp=sharing) :star2:
 
 
 ### Prerequisite
