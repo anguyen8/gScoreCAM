@@ -29,11 +29,31 @@ You may use it with:
 ```bashscript
 python visualize_cam.py --cam-version [CAM version] --image-folder [path to testing images] --image-src [name of the datset]
 ```
-For example, test gScoreCAM on COCO images.
+#### Usage Sample 1: Run on MS COCO
+
+You will need to download the [MS COCO dataset](https://cocodataset.org/#home) and the [meta data](https://drive.google.com/file/d/1S6JPTDNJnlr3it2ox3i8gAR3Bv9VuWOk/view?usp=sharing).
 ```
 python visualize_cam.py --cam-version gscorecam --image-folder path_to_coco --image-src coco
 ```
-After the program will prompt you with a question asking if you would like to go for specific class or random class, you could simply tpye the class name or press enter for random.
+The program will prompt you with a question asking if you would like to go for specific class or random class, you could simply tpye the class name or press enter for random classes.
+
+![Image here](/sample_image/prompt_class_name.png)
+
+After the class is chosen, the script will then ask for a prompt: 
+![Image here](/sample_image/sample_prompt.png)
+
+For example, I want to see if the model can react to `heart`. Simply type `heart` and then enter. After a while, you will see:
+![Image here](/sample_image/sample_result.png)
+On the left is the original image, the right image is the heatmap of the model overlap on the original image.
+
+#### Usage Sample 2:
+
+Instead of runing on a specific dataset, you could run on any folder that only contain images:
+
+```
+python visualize_cam.py --cam-version gscorecam --image-folder path_to_image_folder 
+```
+The interative script will be the same as above.
 
 ### Evaluation code
 In order to use the evaluation code, you will need to download the meta data from [Google Drive](https://drive.google.com/file/d/1S6JPTDNJnlr3it2ox3i8gAR3Bv9VuWOk/view?usp=sharing). We extract the metat data of IamgeNetv2, COCO, and PartImageNet into `.hdf5` format for convenience. 
