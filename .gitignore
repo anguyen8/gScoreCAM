@@ -17,7 +17,7 @@ eval_toasterImageNet.py
 # stored data
 /results
 /data
-/meta_data
+# /meta_data
 /datasets
 /wsolevaluation
 /plot_stats
