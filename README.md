@@ -4,6 +4,8 @@ _**tldr:** Based on the observations that [CLIP ResNet-50](https://github.com/op
 
 
 **Official Implementation** for the paper [gScoreCAM: What is CLIP looking at?]() (2022) by Peijie Chen, Qi Li, Saad Biaz, Trung Bui, and Anh Nguyen. :star: **Oral** paper at ACCV 2022. :star:
+
+
 If you use this software, please consider citing:
 
     @inproceedings{chen2022gScoreCAM,
