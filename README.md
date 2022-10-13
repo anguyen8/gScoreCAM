@@ -82,9 +82,9 @@ Then you can evaluate on these heatmaps with Choe et al.'s evaluation script:
 python evaluation.py --scoremap_root {FOLDER_OF_HEATMAPS} --dataset_name imagenet
 ```
 
-**Generate heatmap for ImageNetv2**
+#### Generate heatmap for ImageNetv2
 
-To generate heatmaps from ImageNetv2, make sure you are under gScoreCAM folder. Then you may get the heatmap with the following command:
+To generate heatmaps from ImageNetv2 evaluation above, make sure you are under `gScoreCAM` folder. Then you may get the heatmap with the following command:
  ```
  python wsol_compute_heatmap.py main --model RN50x16 --method gscorecam --dataset imagenet --is-clip
  ```
