@@ -74,16 +74,17 @@ python eval_partsImageNet.py info-ground-eval --model-name RN50x16 --cam-version
 #### ImageNetv2 evaluation
 To evaluate ImageNetv2, we use Choe et al's evaluation script directly. Please first clone [this repo](https://github.com/clovaai/wsolevaluation) and then follow their data preparation instruction to download and prepare the data. We use [this script](https://github.com/clovaai/wsolevaluation/blob/master/dataset/prepare_imagenet.sh) provided in their repo, you may run the script as follows:
 ```
+cd wsolevaluation
 ./dataset/prepare_imagenet.sh
 ```
-
-You may get the heatmap with the following command:
- ```
- python wsol_compute_heatmap.py main --model RN50x16 --method gscorecam --dataset imagenet --is-clip
- ```
 Then you can evaluate on these heatmaps with Choe et al.'s evaluation script:
 ```
 python evaluation.py --scoremap_root {FOLDER_OF_HEATMAPS} --dataset_name imagenet
 ```
 
+**Generate heatmap for ImageNetv2**
+To generate heatmaps from ImageNetv2, make sure you are under gScoreCAM folder. Then you may get the heatmap with the following command:
+ ```
+ python wsol_compute_heatmap.py main --model RN50x16 --method gscorecam --dataset imagenet --is-clip
+ ```
 
