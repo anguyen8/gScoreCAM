@@ -72,7 +72,7 @@ python eval_partsImageNet.py info-ground-eval --model-name RN50x16 --cam-version
 ```
 
 #### ImageNetv2 evaluation
-To evaluate ImageNetv2, we use Choe et al's evaluation script directly. Please first follow [this repo](https://github.com/clovaai/wsolevaluation) to download the data and evaluation script. We use [this script]() provided in their repo, you may download the script and run the following:
+To evaluate ImageNetv2, we use Choe et al's evaluation script directly. Please first clone [this repo](https://github.com/clovaai/wsolevaluation) and then follow their data preparation instruction to download and prepare the data. We use [this script](https://github.com/clovaai/wsolevaluation/blob/master/dataset/prepare_imagenet.sh) provided in their repo, you may download the script and run the following:
 ```
 ./dataset/prepare_imagenet.sh
 ```
