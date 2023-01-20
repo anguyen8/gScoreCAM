@@ -7,7 +7,7 @@ import numpy as np
 from skimage.transform import resize
 from tools.iou_tool import xywh2xyxy
 import torch
-from typing import Any, Tuple
+from typing import Any, Tuple, List
 
 #* when using this ranking method, make sure the order of (box_list, area_list, intensity_list) is the consistent
 class Heatmap2BB(object):
@@ -15,7 +15,7 @@ class Heatmap2BB(object):
     # when alpha = 1, result is area-base box
     # when alpha = 0, result is intense-base box 
     @staticmethod
-    def get_pred_boxes(cam: np.ndarray, grid_size: float = 1, to_xyxy: bool= True, alpha: float or None= None, threshold: float = 1.0) -> list[list]:
+    def get_pred_boxes(cam: np.ndarray, grid_size: float = 1, to_xyxy: bool= True, alpha: float or None= None, threshold: float = 1.0) -> List[list]:
         contours = Heatmap2BB.get_contours(cam, threshold)
         candidate_boxes, box_areas = Heatmap2BB.get_bounding_boxes(contours, cam, to_xyxy)
         mean_intense = Heatmap2BB.mean_contour_intensity(contours, cam)
@@ -23,12 +23,12 @@ class Heatmap2BB(object):
         return Heatmap2BB.choose_boxes(candidate_boxes, scores)
     
     @staticmethod
-    def choose_boxes(boxes: list[list], score: np.ndarray):
+    def choose_boxes(boxes: List[list], score: np.ndarray):
         choices = score.argmax(axis=1)
         return [boxes[choice] for choice in choices]
     
     @staticmethod
-    def mean_contour_intensity(contours: list, graycam: np.ndarray) -> list:
+    def mean_contour_intensity(contours: List, graycam: np.ndarray) -> list:
         if not contours:
             return [1e-3]
         cnt_mean = []
@@ -81,7 +81,7 @@ class Heatmap2BB(object):
     
     #! EXPERIMENTAL: scale intensity and area such that they are comparable
     @staticmethod
-    def _get_pred_boxes_experimental(cam: np.ndarray, grid_size: float = 1, to_xyxy: bool= True, alpha: float or None= None, threshold: float = 1.0) -> list[list]:
+    def _get_pred_boxes_experimental(cam: np.ndarray, grid_size: float = 1, to_xyxy: bool= True, alpha: float or None= None, threshold: float = 1.0) -> List[list]:
         contours = Heatmap2BB.get_contours(cam, threshold)
         candidate_boxes, box_areas = Heatmap2BB.get_bounding_boxes(contours, cam, to_xyxy)
         mean_intense = Heatmap2BB.mean_contour_intensity(contours, cam)

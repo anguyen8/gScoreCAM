@@ -5,6 +5,7 @@ import argparse
 import random
 import pandas as pd
 from PIL import Image
+from typing import List, Tuple, Dict, Union
 
 from tools.cam import CAMWrapper, CLIP_topk_channels
 from tools.drawing import concat_images, draw_text, Drawer
@@ -180,7 +181,7 @@ class CLIPIntereactiveCAM:
         os.system('imgcat cam_temp/temp_cat.jpg')
         return cat_image
         
-    def print_cam_info(self, input_image: Image, input_text: str) -> tuple[str, float]:
+    def print_cam_info(self, input_image: Image, input_text: str) -> Tuple[str, float]:
         output_dict = {'Input text': input_text}
         #* Score for all cam method is the same
         # for cam, cam_version in zip(self.cam, self.cam_version.split(',')):
@@ -196,7 +197,7 @@ class CLIPIntereactiveCAM:
         return temp_text, score
 
     # get gt boxes from hdf5 file
-    def get_gt_boxes(self, input_text: str, image_id: int) -> list[list[float, float, float, float]]:
+    def get_gt_boxes(self, input_text: str, image_id: int) -> List[List[float, float, float, float]]:
         intances = self.meta_data[self.meta_data['image_id'] == image_id]
         mapped_text = find_best_matching_string(input_text, self.dataset_classes)
         try:

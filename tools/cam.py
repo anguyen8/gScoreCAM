@@ -1,3 +1,4 @@
+from typing import List
 from pytorch_grad_cam import *
 
 import torch, torchvision
@@ -246,7 +247,7 @@ def CLIP_topk_channels(src_path='data/featuremap_search', cat_name='all', topk=1
 
 def load_cam(model: torch.nn.Module, 
                 cam_version: str,
-                target_layers: list[torch.nn.Module], 
+                target_layers: List[torch.nn.Module], 
                 preprocess: torchvision.transforms.Compose,
                 cam_trans: torch.nn.Module, # for transformer
                 drop: bool,
