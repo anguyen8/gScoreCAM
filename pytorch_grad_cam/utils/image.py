@@ -114,4 +114,4 @@ def cls_reshpae(tensor):
     # Bring the channels to the first dimension,
     # like in CNNs.
     result = result.permute(2, 0, 1)
-    return result.unsqueeze(0)
+    return result.unsqueeze(0).numpy()
