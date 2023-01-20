@@ -101,6 +101,7 @@ class CAMWrapper(object):
         self.cam_trans = cam_trans
         self.is_transformer = is_transformer
         self.is_clip = is_clip
+        self.channels = None
         self.__dict__.update(kwargs)
 
         if self.version not in self.CAM_LIST:
