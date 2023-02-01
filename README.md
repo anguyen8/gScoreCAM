@@ -15,7 +15,11 @@ If you use this software, please consider citing:
       year={2022}
     }
 
-:star2: Interactive [Colab demo](https://colab.research.google.com/drive/13BRR5eiOE0zIrdc9Fy6uFciJ6l13PVg8?usp=sharing) :star2:
+### See how it works
+
+:star2: Interactive Colab demo: [![Open In Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/drive/13BRR5eiOE0zIrdc9Fy6uFciJ6l13PVg8?usp=sharing)
+
+:star2: Run it on Replicate: <a href="https://replicate.com/arielreplicate/gscorecam-clip-analyzer"><img src="https://replicate.com/arielreplicate/gscorecam-clip-analyzer/badge"></a>
 
 
 ### Prerequisite
