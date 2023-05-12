@@ -66,7 +66,7 @@ In order to use the evaluation code, you will need to download the meta data fro
 #### COCO evalutaion
 You may run the evalution code with the following command:
 ```
-python evaluate_cam.py info-ground-eval --model-name RN50x16 --cam-version gscorecam --image-src coco --image-folder path_to_image --meta-file meta_data/coco_val_instances_stats.hdf5
+python evaluate_cam.py info-ground-eval --model-name RN50x16 --cam-version gscorecam --image-src coco --image-folder path_to_image --meta-file --is_clip meta_data/coco_val_instances_stats.hdf5
 ```
 You may need to change the path accordingly.
 #### PartImageNet evaluation
