@@ -57,7 +57,7 @@ On the left is the original image, the right image is the heatmap of the model o
 Instead of runing on a specific dataset, you could run on any folder that only contain images:
 
 ```
-python visualize_cam.py --cam-version gscorecam --image-folder path_to_image_folder 
+python visualize_cam.py --cam-version gscorecam --image-src name_for_image_folder --image-folder path_to_image_folder
 ```
 The interative script will be the same as above.
 
